@@ -1,0 +1,704 @@
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+/* Prevent horizontal overflow */
+html,
+body {
+  overflow-x: hidden;
+  ::-webkit-scrollbar {
+    display: none;
+    background-color: #f1f1f1;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #f1c40f;
+  }
+}
+
+/* Variables */
+:root {
+  --primary-color: #f1c40f; /* Yellow */
+  --secondary-color: #000; /* Black */
+  --light-color: #222; /* Dark Gray */
+  --accent-color: #e67e22; /* Orange Accent */
+  --font-family: "Open Sans", sans-serif;
+}
+
+/* Reset & Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--font-family);
+  background-color: var(--secondary-color);
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background-color: var(--light-color);
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1170px;
+  margin: 0 auto;
+  width: 100%;
+}
+header .logo img {
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .container .form {
+  margin-left: 20px;
+  padding-right: 20px;
+}
+nav {
+  display: flex;
+  align-items: center;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  display: block;
+}
+nav ul li a:hover,
+nav ul li a.active {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 5px;
+}
+.toggle-menu {
+  display: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Landing Section */
+.landing {
+  position: relative;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 60px; /* space for fixed header */
+}
+.landing .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+.landing .text {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 20px;
+}
+.landing .text h2 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+  animation: fadeIn 1s ease-in-out;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  font-family: "Russo One", serif;
+  letter-spacing: 5px;
+}
+@media (max-width: 576px) {
+  .landing .text h2 {
+    letter-spacing: 2px;
+  }
+}
+@media (max-width: 768px) {
+  .landing .text h2 .break {
+    display: block;
+  }
+}
+.landing .text p {
+  font-size: 1.2rem;
+}
+.change-background {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary-color);
+  cursor: pointer;
+  z-index: 3;
+}
+.change-background[data-dir="prev"] {
+  left: 20px;
+}
+.change-background[data-dir="next"] {
+  right: 20px;
+}
+.bullets {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 3;
+  list-style: none;
+}
+.bullets li {
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  opacity: 0.5;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+.bullets li.active,
+.bullets li:hover {
+  opacity: 1;
+}
+
+/* Services Section */
+.services {
+  padding: 80px 0;
+  background-color: var(--secondary-color);
+}
+.services .main-heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.services .main-heading h2 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  font-family: "Russo One", serif;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+.services .main-heading p {
+  color: #ccc;
+  font-size: 1rem;
+}
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+.srv-box {
+  background-color: var(--light-color);
+  padding: 20px;
+  width: 280px;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+.srv-box:hover {
+  transform: scale(1.05);
+}
+.srv-box i {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+.srv-box h3 {
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+.srv-box p {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* Gallery (Portfolio) Section */
+.portfolio {
+  padding: 80px 0;
+  background-color: var(--light-color);
+  color: #000;
+}
+.portfolio .main-heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.portfolio .main-heading h2 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  font-family: "Russo One", serif;
+  letter-spacing: 5px;
+}
+.portfolio .main-heading p {
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+}
+.filter {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  list-style: none;
+}
+.filter li {
+  cursor: pointer;
+  padding: 5px 10px;
+  border: 1px solid var(--secondary-color);
+  transition: background 0.3s, color 0.3s;
+}
+.filter li.active,
+.filter li:hover {
+  background-color: var(--secondary-color);
+  color: #fff;
+}
+.images-holder {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  padding: 0 20px;
+}
+.images-holder .box {
+  position: relative;
+  overflow: hidden;
+}
+.images-holder .box img {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s;
+}
+.images-holder .box:hover img {
+  transform: scale(1.1);
+}
+.images-holder .box .caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(241, 196, 15, 0.8);
+  color: var(--secondary-color);
+  padding: 10px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.images-holder .box:hover .caption {
+  opacity: 1;
+}
+
+/* Video Section */
+.video {
+  height: 60vh;
+  overflow: hidden;
+  position: relative;
+}
+.video::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.9);
+}
+.video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.video .text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  z-index: 2;
+}
+.video .text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+  font-family: "Russo One", serif;
+  letter-spacing: 5px;
+}
+.video .text p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* About Us Section */
+.about {
+  padding: 80px 0;
+  background-color: var(--secondary-color);
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+.about::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../images/about-gym.jpg) center center/cover;
+  filter: blur(2px) grayscale(0.4);
+  z-index: 2;
+}
+.about::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+.about .main-heading h2 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  position: relative;
+  font-family: "Russo One", serif;
+  letter-spacing: 5px;
+  z-index: 3;
+}
+.about .main-heading p {
+  font-size: 1rem;
+  color: white;
+  position: relative;
+  z-index: 3;
+}
+
+/* Pricing Section */
+.pricing {
+  padding: 80px 0;
+  background-color: var(--secondary-color);
+  color: #000;
+  text-align: center;
+}
+.pricing .main-heading h2 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  font-family: "Russo One", serif;
+  letter-spacing: 5px;
+}
+.pricing .main-heading p {
+  color: white;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.plans-holder {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+.plan-box {
+  background-color: #fff;
+  border: 2px solid var(--secondary-color);
+  width: 250px;
+  padding: 20px;
+  border-radius: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.plan-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px var(--primary-color);
+}
+.plan-box .head h3 {
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+}
+.plan-box .head span {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+.plan-box ul {
+  list-style: none;
+  margin: 20px 0;
+  padding: 0;
+}
+.plan-box ul li {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+.plan-box .foot a {
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+.plan-box .foot a:hover {
+  background-color: var(--accent-color);
+}
+p.contact-text {
+  color: white;
+  margin-top: 20px;
+}
+a.contact-link {
+  text-decoration: none;
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  text-align: center;
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+a.contact-link:hover {
+  background-color: var(--accent-color);
+}
+/* Subscribe Section */
+.subscribe {
+  padding: 60px 0;
+  background-color: var(--light-color);
+  text-align: center;
+}
+.subscribe form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.subscribe form i {
+  color: var(--primary-color);
+}
+@media (max-width: 576px) {
+  .subscribe form {
+    flex-direction: column;
+  }
+  .subscribe form i {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: var(--primary-color);
+  }
+}
+.subscribe form input[type="email"] {
+  padding: 10px;
+  width: 300px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  caret-color: var(--primary-color);
+}
+.subscribe form input[type="submit"] {
+  padding: 10px 20px;
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.subscribe form input[type="submit"]:hover {
+  background-color: var(--accent-color);
+}
+.subscribe p {
+  color: #fff;
+}
+
+/* Contact Section */
+.contact {
+  padding: 80px 0;
+  background-color: var(--secondary-color);
+  color: var(--secondary-color);
+  text-align: center;
+}
+.contact .main-heading h2 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  font-family: "Russo One", serif;
+  letter-spacing: 5px;
+}
+.contact .main-heading p {
+  margin-bottom: 40px;
+  color: #555;
+  text-align: center;
+}
+.contact .content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  text-align: center;
+}
+
+.contact form {
+  flex-basis: 50%;
+  min-width: 300px;
+  text-align: center;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .contact form {
+    margin-left: auto;
+  }
+}
+.contact form .main-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  caret-color: var(--primary-color);
+}
+.contact form input[type="submit"] {
+  padding: 10px 20px;
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.contact form input[type="submit"]:hover {
+  background-color: var(--accent-color);
+}
+.contact .info {
+  min-width: 300px;
+  text-align: left;
+  margin: 0 auto;
+}
+.contact .info h4 {
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+.contact .info span,
+.contact .info address {
+  display: block;
+  margin-bottom: 5px;
+  color: white;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--light-color);
+  color: #fff;
+  padding: 20px 0 10px;
+  text-align: center;
+}
+.footer img {
+  width: 80px;
+  margin-bottom: 10px;
+}
+.footer .social-icons i {
+  color: var(--primary-color);
+  margin: 0 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.footer .social-icons i:hover {
+  transform: scale(1.2);
+}
+.footer p {
+  margin-top: 10px;
+}
+.footer span {
+  color: var(--primary-color);
+  font-family: "Russo One", serif;
+  letter-spacing: 3px;
+}
+/* Responsive Styles */
+@media (max-width: 768px) {
+  /* Header adjustments */
+  header {
+    padding: 15px 5px;
+  }
+  header .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  /* Display hamburger menu and hide  nav  */
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 71px;
+    left: 0;
+    width: 100%;
+    background-color: #22222250;
+    padding: 10px 0;
+    z-index: 99;
+    backdrop-filter: blur(5px);
+    border-radius: 6px;
+  }
+  nav ul.active {
+    display: flex;
+  }
+  .toggle-menu {
+    display: block;
+    font-size: 1.5rem;
+  }
+  /* Adjust navigation links font size */
+  nav ul li a {
+    padding: 10px;
+    font-size: 1rem;
+  }
+  nav ul li:not(:last-child) {
+    border-bottom: 1px solid white;
+    border-radius: 6px;
+  }
+  /* Landing Section adjustments */
+  .landing .text h2 {
+    font-size: 2rem;
+  }
+  .landing .text p {
+    font-size: 1rem;
+  }
+  /* Main headings adjustments */
+  .services .main-heading h2,
+  .portfolio .main-heading h2,
+  .about .main-heading h2,
+  .pricing .main-heading h2,
+  .contact .main-heading h2 {
+    font-size: 2rem;
+  }
+  /* Adjust other text sizes */
+  .services .main-heading p,
+  .portfolio .main-heading p,
+  .about .main-heading p,
+  .pricing .main-heading p,
+  .contact .main-heading p {
+    font-size: 0.9rem;
+  }
+  /* Gallery padding adjustments */
+  .images-holder {
+    padding: 0 10px;
+  }
+  .pricing .main-heading,
+  .contact .main-heading {
+    text-align: center;
+  }
+}

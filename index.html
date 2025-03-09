@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitZone Gym</title>
+    <link rel="icon" href="images/logo.png" type="image/png" />
+    <!-- Normalize CSS -->
+    <link rel="stylesheet"  href="./css/normalize.css" />
+    <!-- Font Awesome Library -->
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="./css/fitzone.css" />
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <a class="logo" href="">
+          <img src="./images/logo.png" alt="FitZone Gym Logo" />
+        </a>
+        <nav>
+          <i class="fas fa-bars toggle-menu"></i>
+          <ul>
+            <li><a class="active" href="#home">Home</a></li>
+            <li><a href="#services">Classes</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#plans">Membership</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <div class="form">
+            <i class="fa fa-search"></i>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- Landing -->
+    <div class="landing" id="home">
+      <div class="overlay"></div>
+      <div class="text">
+        <div class="content">
+          <h2>
+            <span class="break">Welcome To</span> FitZone Gym<br />
+            Get Fit, Stay Strong.
+          </h2>
+          <p>Transform your body and mind with our expert trainers and modern facilities.</p>
+        </div>
+      </div>
+      <!-- Arrows to change background -->
+      <i class="fas fa-angle-left fa-2x change-background" data-dir="prev"></i>
+      <i class="fas fa-angle-right fa-2x change-background" data-dir="next"></i>
+      <ul class="bullets">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+    <!-- Services Section -->
+    <div id="services" class="services">
+      <div class="container">
+        <div class="main-heading">
+          <h2>Our Classes</h2>
+          <p>Discover our wide range of fitness classes tailored to help you achieve your goals.</p>
+        </div>
+        <div class="services-container">
+          <div class="srv-box">
+            <i class="fas fa-dumbbell fa-3x"></i>
+            <div class="text">
+              <h3>Strength Training</h3>
+              <p>Build muscle and boost strength with our guided training sessions.</p>
+            </div>
+          </div>
+          <div class="srv-box">
+            <i class="fas fa-running fa-3x"></i>
+            <div class="text">
+              <h3>Cardio Workouts</h3>
+              <p>Burn calories and improve stamina with high-energy cardio classes.</p>
+            </div>
+          </div>
+          <div class="srv-box">
+            <i class="fas fa-spa fa-3x"></i>
+            <div class="text">
+              <h3>Yoga &amp; Pilates</h3>
+              <p>Enhance flexibility and find balance with our yoga and pilates sessions.</p>
+            </div>
+          </div>
+          <div class="srv-box">
+            <i class="fas fa-heartbeat fa-3x"></i>
+            <div class="text">
+              <h3>Personal Training</h3>
+              <p>Get personalized guidance to reach your fitness goals faster.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Gallery (Portfolio) Section -->
+    <div id="gallery" class="portfolio">
+      <div class="main-heading">
+        <h2>Gallery</h2>
+        <p>See how our members push their limits and transform their lives.</p>
+      </div>
+      <div class="images-holder">
+        <div class="box">
+          <img src="./images/gallery2.jpg" alt="Gym Image" />
+          <div class="caption">
+            <h4>Workout Session</h4>
+            <p>Intensity and focus</p>
+          </div>
+        </div>
+        <div class="box">
+          <img src="./images/gallery1.jpg" alt="Gym Image" />
+          <div class="caption">
+            <h4>Group Class</h4>
+            <p>Team spirit</p>
+          </div>
+        </div>
+        <div class="box">
+          <img src="./images/gallery3.jpg" alt="Gym Image" />
+          <div class="caption">
+            <h4>Yoga &amp; Pilates</h4>
+            <p>Enhance flexibility and find balance</p>
+          </div>
+        </div>
+        <div class="box">
+          <img src="./images/gallery4.jpg" alt="Gym Image" />
+          <div class="caption">
+            <h4>Cardio Workouts</h4>
+            <p>Burn calories and improve stamina</p>
+          </div>
+        </div>
+        <!-- Additional images as needed -->
+      </div>
+    </div>
+    <!-- Video Section -->
+    <div class="video">
+      <video autoplay muted loop>
+        <source src="./images/Gym-video.mp4" type="video/mp4" />
+      </video>
+      <div class="text">
+        <h2>Our Facility in Action</h2>
+        <p>Experience the energy at FitZone Gym.</p>
+      </div>
+    </div>
+    <!-- About Us Section -->
+    <div id="about" class="about">
+      <div class="main-heading">
+        <h2>About Us</h2>
+        <p>
+          At FitZone Gym, we believe in transforming lives through fitness. Our state-of-the-art facility and expert
+          trainers are here to help you reach your full potential.
+        </p>
+      </div>
+    </div>
+    <!-- Pricing Section -->
+    <div id="plans" class="pricing">
+      <div class="container">
+        <div class="main-heading">
+          <h2>Membership Plans</h2>
+          <p>Choose a plan that fits your lifestyle and start your fitness journey today.</p>
+        </div>
+        <div class="plans-holder">
+          <div class="plan-box">
+            <div class="head">
+              <h3>Basic</h3>
+              <span>$19/mo</span>
+            </div>
+            <ul>
+              <li>Access to gym equipment</li>
+              <li>1 group class per week</li>
+              <li>Basic support</li>
+            </ul>
+            <div class="foot">
+              <a href="#">Join Now</a>
+            </div>
+          </div>
+          <div class="plan-box">
+            <div class="head">
+              <h3>Premium</h3>
+              <span>$29/mo</span>
+            </div>
+            <ul>
+              <li>All Basic features</li>
+              <li>3 group classes per week</li>
+              <li>Access to personal training</li>
+            </ul>
+            <div class="foot">
+              <a href="#">Join Now</a>
+            </div>
+          </div>
+          <div class="plan-box">
+            <div class="head">
+              <h3>Elite</h3>
+              <span>$39/mo</span>
+            </div>
+            <ul>
+              <li>Unlimited classes</li>
+              <li>Personal training sessions</li>
+              <li>Nutrition consultation</li>
+            </ul>
+            <div class="foot">
+              <a href="#">Join Now</a>
+            </div>
+          </div>
+        </div>
+        <p class="contact-text">Contact us for custom membership plans.</p>
+        <a class="contact-link" href="#">Contact Us</a>
+      </div>
+    </div>
+    <!-- Subscribe Section -->
+    <div class="subscribe">
+      <div class="container">
+        <form action="">
+          <i class="far fa-envelope fa-lg"></i>
+          <input type="email" name="mail" placeholder="Your Email" />
+          <input type="submit" value="Subscribe" />
+        </form>
+        <p>Stay updated with our latest offers and fitness tips.</p>
+      </div>
+    </div>
+    <!-- Contact Section -->
+    <div id="contact" class="contact">
+      <div class="container">
+        <div class="main-heading">
+          <h2>Contact Us</h2>
+          <p>Have questions or need more info? Get in touch with us today!</p>
+        </div>
+        <div class="content">
+          <form action="">
+            <input class="main-input" type="text" name="name" placeholder="Your Name" />
+            <input class="main-input" type="email" name="mail" placeholder="Your Email" />
+            <textarea class="main-input" name="message" cols="30" rows="10" placeholder="Your Message"></textarea>
+            <input type="submit" value="Send Message" />
+          </form>
+          <div class="info">
+            <div class="phone-box">
+              <h4>Get In Touch</h4>
+              <span class="phone">+00 123 456 789</span>
+              <span class="phone">+00 987 654 321</span>
+            </div>
+            <div class="address-box">
+              <h4>Where We Are</h4>
+              <address>
+                <span class="address-text">123 Fitness Ave,<br />New York, NY</span>
+                <span class="address-text">Phone: +00 123 456 789</span>
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <div class="footer">
+      <div class="container">
+        <img src="images/logo.png" alt="FitZone Gym Logo" />
+        <p>Follow Us</p>
+        <div class="social-icons">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-github"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-linkedin"></i>
+        </div>
+        <p class="copyright">
+          © 2025 <span>FitZone Gym</span> All Rights Reserved<br />
+          Created by <span>Motaz Gablawy</span>.
+        </p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+
+  </body>
+</html>
